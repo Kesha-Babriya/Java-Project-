@@ -2,6 +2,8 @@ package ui;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+import auth.AuthApp;
 import controller.BankController;
 import model.Customer;
 import java.awt.*;
@@ -146,8 +148,13 @@ public class AdminDashboard extends JFrame {
                 JOptionPane.showMessageDialog(this, "Select a customer to delete");
             }
         });
+        exitButton.addActionListener(e -> {
+    this.dispose(); // closes only the dashboard
+    new AuthApp(bank); // returns to login screen
+    });
 
-        exitButton.addActionListener(e -> System.exit(0));
+
+        
     }
 
     // ---------------- Helper Functions ----------------

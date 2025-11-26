@@ -11,6 +11,7 @@ public class FastCash extends JFrame implements ActionListener {
         setSize(300, 250);
         setLayout(null);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         b500 = new JButton("₹500");
         b500.setBounds(90, 30, 100, 30);

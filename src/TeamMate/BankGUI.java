@@ -16,7 +16,8 @@ public class BankGUI extends JFrame {
     public BankGUI() {
         setTitle("Bank Account Management System");
         setSize(700, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    //    setDefaultCloseOperation(EXIT_ON_CLOSE);
+      setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 

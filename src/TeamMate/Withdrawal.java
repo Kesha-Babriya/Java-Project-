@@ -12,6 +12,7 @@ public class Withdrawal extends JFrame implements ActionListener {
         setSize(300, 200);
         setLayout(null);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JLabel label = new JLabel("Enter amount:");
         label.setBounds(30, 30, 100, 30);

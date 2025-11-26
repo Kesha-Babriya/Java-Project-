@@ -51,27 +51,70 @@ public class CombinedCustomerHub extends JFrame {
         add(logoutBtn);
 
         // Button actions: just create the frames (their classes setVisible(true) in constructors)
-        profileBtn.addActionListener(e -> {
+  //      profileBtn.addActionListener(e -> {
             // Anjal's customer profile menu -> TeamMate.CustomerProfileMenu
-            SwingUtilities.invokeLater(() -> {
-                new TeamMate.CustomerProfileMenu();
+  //          SwingUtilities.invokeLater(() -> {
+  //              new TeamMate.CustomerProfileMenu();
+  //          });
+  //      });
+
+  //      accountBtn.addActionListener(e -> {
+            // Twisha's BankGUI
+  //          SwingUtilities.invokeLater(() -> {
+  //              new TeamMate.BankGUI();
+        //     });
+        // });
+
+        // transactionBtn.addActionListener(e -> {
+        //     // Moksha's MainFrameGUI (which opens TransactionGUI)
+        //     SwingUtilities.invokeLater(() -> {
+        //         new TeamMate.MainFrameGUI();
+        //     });
+        // });
+profileBtn.addActionListener(e -> {
+            // Anjal's customer profile menu -> TeamMate.CustomerProfileMenu
+            // SwingUtilities.invokeLater(() -> {
+            //     new TeamMate.CustomerProfileMenu();
+            // });
+            this.setVisible(false);
+            JFrame frame = new TeamMate.CustomerProfileMenu();
+            frame.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosed(java.awt.event.WindowEvent e) {
+                    setVisible(true);
+                }
             });
         });
 
         accountBtn.addActionListener(e -> {
             // Twisha's BankGUI
-            SwingUtilities.invokeLater(() -> {
-                new TeamMate.BankGUI();
+            // SwingUtilities.invokeLater(() -> {
+            //     new TeamMate.BankGUI();
+            // });
+            this.setVisible(false);
+            JFrame frame = new TeamMate.BankGUI();
+            frame.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosed(java.awt.event.WindowEvent e) {
+                    setVisible(true);
+                }
             });
         });
 
         transactionBtn.addActionListener(e -> {
             // Moksha's MainFrameGUI (which opens TransactionGUI)
-            SwingUtilities.invokeLater(() -> {
-                new TeamMate.MainFrameGUI();
+            // SwingUtilities.invokeLater(() -> {
+            //     new TeamMate.MainFrameGUI();
+            // });
+            this.setVisible(false);
+            JFrame frame = new TeamMate.MainFrameGUI();
+            frame.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosed(java.awt.event.WindowEvent e) {
+                    setVisible(true); // back to hub
+                }
             });
         });
-
         logoutBtn.addActionListener(e -> {
             dispose();
             new auth.AuthApp(bank);

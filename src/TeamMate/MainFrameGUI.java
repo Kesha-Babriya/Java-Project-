@@ -12,7 +12,8 @@ public class MainFrameGUI extends JFrame implements ActionListener
         setSize(1480, 1480);
         setLayout(null);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+     //   setDefaultCloseOperation(EXIT_ON_CLOSE);
+     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JLabel title = new JLabel("WELCOME TO BANK MANAGEMENT SYSTEM");
         title.setFont(new Font("Times New Roman", Font.BOLD, 32));

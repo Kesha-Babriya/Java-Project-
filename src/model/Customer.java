@@ -62,4 +62,21 @@ public class Customer {
     public void displayInfo() {
         System.out.println("Customer: " + name + " | Acc#: " + accountNumber + " | Balance: " + balance);
     }
+
+    // ---------------- CSV Support ----------------
+    public String toCSV() {
+        // Format: name,accountNumber,balance,approved,accountType
+        return name + "," + accountNumber + "," + balance + "," + approved + "," + accountType;
+    }
+
+    public static Customer fromCSV(String line) {
+        String[] parts = line.split(",");
+        if (parts.length != 5) return null; // invalid line
+        String name = parts[0];
+        String acc = parts[1];
+        double balance = Double.parseDouble(parts[2]);
+        boolean approved = Boolean.parseBoolean(parts[3]);
+        String type = parts[4];
+        return new Customer(name, acc, balance, approved, type);
+    }
 }

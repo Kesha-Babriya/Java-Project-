@@ -13,7 +13,8 @@ public class TransactionGUI extends JFrame implements ActionListener
         setSize(1480, 1480);
         setLayout(null);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    //    setDefaultCloseOperation(EXIT_ON_CLOSE);
+setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JLabel title = new JLabel("TRANSACTIONS");
         title.setFont(new Font("Times New Roman", Font.BOLD, 32));
@@ -95,7 +96,9 @@ public class TransactionGUI extends JFrame implements ActionListener
         }
 
         else if (e.getSource() == exitBtn) {
-            System.exit(0);
+     //       System.exit(0);
+dispose();
+
         }
 
     }
